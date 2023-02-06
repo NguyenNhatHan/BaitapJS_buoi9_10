@@ -163,7 +163,7 @@ function validate() {
         getElement("#tbTen").innerHTML = " Họ và tên không được để trống"
         getElement("#tbTen").style.display = "block";
     } else if (!/[a-z]|[A-Z]|\s/.test(name)) {
-        isValid = false;
+        isValidate = false;
         getElement("#tbTen").innerHTML = "Tên nhân viên không hợp lệ";
         getElement("#tbTen").style.display = "block";
     } else {
@@ -172,11 +172,11 @@ function validate() {
     // ktra email
     let email = getElement("#email").value;
     if (!email.trim()) {
-        isValid = false;
+        isValidate = false;
         getElement("#tbEmail").innerHTML = "email nhân viên không được để trống";
         getElement("#tbEmail").style.display = "block";
     } else if (!/^[\w.]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(email)) {
-        isValid = false;
+        isValidate = false;
         getElement("#tbEmail").innerHTML = "email nhân viên không hợp lệ";
     } else {
         getElement("#tbEmail").innerHTML = "";
@@ -184,12 +184,12 @@ function validate() {
     // ktra password
     let password = getElement("#password").value;
     if (!password.trim()) {
-        isValid = false;
+        isValidate = false;
         getElement("#tbMatKhau").innerHTML = "Mật khẩu nhân viên không được để trống";
         getElement("#tbMatKhau").style.display = "block";
     } else if (
         !/((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{6,10})/.test(password)) {
-        isValid = false;
+        isValidate = false;
         getElement("#tbMatKhau").innerHTML = "Mật khẩu nhân viên không hợp lệ";
     }
     else {
@@ -198,13 +198,13 @@ function validate() {
     //Kiểm tra ngày làm
     let date = getElement("#datepicker").value;
     if (!date.trim()) {
-        isValid = false;
+        isValidate = false;
         getElement("#tbNgay").style.display = "block";
         getElement("#tbNgay").innerHTML = "Ngày làm nhân viên không được để trống";
     } else if (
         !/^((0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])[- /.](19|20)?[0-9]{2})*$/.test(date)
     ) {
-        isValid = false;
+        isValidate = false;
         getElement("#tbNgay").style.display = "block";
         getElement("#tbNgay").innerHTML = "Ngày làm nhân viên không hợp lệ";
     } else {
@@ -214,12 +214,12 @@ function validate() {
     let salary = getElement("#luongCB").value;
 
     if (!salary.trim()) {
-        isValid = false;
+        isValidate = false;
         getElement("#tbLuongCB").innerHTML = "Lương cơ bản không được để trống";
         getElement("#tbLuongCB").style.display = "block";
     }
     else if (!(salary >= 1_000_000 && salary <= 20_000_000)) {
-        isValid = false;
+        isValidate = false;
         getElement("#tbLuongCB").innerHTML = "Lương cơ bản không hợp lệ";
         getElement("#tbLuongCB").style.display = "block";
     }
@@ -229,7 +229,7 @@ function validate() {
     // Ktra chức vụ
     let service = getElement("#chucvu").value;
     if (service === "Chọn chức vụ") {
-        isValid = false;
+        isValidate = false;
         getElement("#tbChucVu").innerHTML = "Vui lòng chọn chức vụ";
         getElement("#tbChucVu").style.display = "block";
     }
@@ -241,11 +241,11 @@ function validate() {
     getElement("#tbGiolam").style.display = "block";
 
     if (!time.trim()) {
-        isValid = false;
+        isValidate = false;
         getElement("#tbGiolam").innerHTML = "Số giờ làm không được để trống";
     }
     else if (!(time >= 80 && time <= 200)) {
-        isValid = false;
+        isValidate = false;
         getElement("#tbGiolam").innerHTML = "Số giờ làm không hợp lệ";
     }
     else {
