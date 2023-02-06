@@ -9,7 +9,7 @@ function Staff(id, name, email, password, day, salary, position, time) {
     this.time = time;
 }
 
-Staff.prototype.position = function () {
+Staff.prototype.rank = function () {
     if (this.position === "boss") {
         return "Sếp";
     } else if (this.position === "manager") {
